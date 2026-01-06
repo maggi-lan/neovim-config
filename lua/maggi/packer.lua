@@ -50,6 +50,9 @@ return require('packer').startup(function(use)
   use 'nvimtools/none-ls.nvim'
   use 'nvimtools/none-ls-extras.nvim'
 
+  -- Commenter
+  use 'numToStr/Comment.nvim'
+
   -- Greeter
   use {
     'goolord/alpha-nvim',
