@@ -6,7 +6,7 @@ require("nvim-treesitter").setup({
 	auto_install = true,
 })
 
-require("nvim-treesitter").install({ "help", "lua", "rust", "javascript", "typescript", "c", "cpp", "python" })
+require("nvim-treesitter").install({ "lua", "rust", "javascript", "typescript", "c", "cpp", "python" })
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "help", "lua", "rust", "javascript", "typescript", "c", "cpp", "python" },
