@@ -44,6 +44,19 @@ vim.lsp.config.lua_ls = {
   },
 }
 
+-- Enable nvim-cmp to communicate with LSPs
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+vim.lsp.config("pyright", { capabilities = capabilities })
+vim.lsp.config('clangd', { capabilities = capabilities })
+vim.lsp.config('ts_ls', { capabilities = capabilities })
+vim.lsp.config('eslint', { capabilities = capabilities })
+vim.lsp.config('rust_analyzer', { capabilities = capabilities })
+vim.lsp.config('html', { capabilities = capabilities })
+vim.lsp.config('cssls', { capabilities = capabilities })
+vim.lsp.config('bashls', { capabilities = capabilities })
+vim.lsp.config('lua_ls', { capabilities = capabilities })
+vim.lsp.config('marksman', { capabilities = capabilities })
+
 -- Connect neovim with the language servers
 vim.lsp.enable('pyright')
 vim.lsp.enable('clangd')

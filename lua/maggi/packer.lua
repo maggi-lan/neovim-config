@@ -53,6 +53,19 @@ return require('packer').startup(function(use)
   -- Commenter
   use 'numToStr/Comment.nvim'
 
+  -- Autocomplete engine
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+
+  -- Snippet engine
+  use {
+    'L3MON4D3/LuaSnip',
+    requires = {
+        {'saadparwaiz1/cmp_luasnip'},
+        {'rafamadriz/friendly-snippets'},
+    },
+  }
+
   -- Greeter
   use {
     'goolord/alpha-nvim',
