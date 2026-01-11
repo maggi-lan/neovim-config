@@ -1,5 +1,9 @@
 -- Set up mason
-require("mason").setup()
+require("mason").setup({
+    ui = {
+        border = "rounded",
+    },
+})
 
 -- Include language servers using mason-lspconfig
 require("mason-lspconfig").setup {
