@@ -80,6 +80,9 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- Git diff viewer
+    use "sindrets/diffview.nvim"
+
     -- Markdown preview
     use({
         "iamcco/markdown-preview.nvim",
