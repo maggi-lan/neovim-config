@@ -4,71 +4,86 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-  -- Fuzzy finder
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
+    -- Fuzzy finder
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
-  -- Gruvbox theme
-  use { "ellisonleao/gruvbox.nvim" }
+    -- Gruvbox theme
+    use { "ellisonleao/gruvbox.nvim" }
 
-  -- Treesitter
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+    -- Treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 
-  -- Harpoon: file switcher
-  use 'ThePrimeagen/harpoon'
+    -- Harpoon: file switcher
+    use 'ThePrimeagen/harpoon'
 
-  -- Undo tree visualizer
-  use 'mbbill/undotree'
+    -- Undo tree visualizer
+    use 'mbbill/undotree'
 
-  -- File manager
-  use 'nvim-tree/nvim-tree.lua'
+    -- File manager
+    use 'nvim-tree/nvim-tree.lua'
 
-  -- Status line
-  use 'nvim-lualine/lualine.nvim'
+    -- Status line
+    use 'nvim-lualine/lualine.nvim'
 
-  -- Mason: language server manager
-  use 'mason-org/mason.nvim'
+    -- Mason: language server manager
+    use 'mason-org/mason.nvim'
 
-  -- lspconfig: connects neovim to the language server
-  use 'neovim/nvim-lspconfig'
+    -- lspconfig: connects neovim to the language server
+    use 'neovim/nvim-lspconfig'
 
-  -- Bridges mason and lspconfig 
-  use 'mason-org/mason-lspconfig.nvim'
+    -- Bridges mason and lspconfig
+    use 'mason-org/mason-lspconfig.nvim'
 
-  -- Telescope UI for LSP code actions
-  use 'nvim-telescope/telescope-ui-select.nvim'
+    -- Telescope UI for LSP code actions
+    use 'nvim-telescope/telescope-ui-select.nvim'
 
-  -- Linter/Formatter
-  use 'nvimtools/none-ls.nvim'
-  use 'nvimtools/none-ls-extras.nvim'
+    -- Linter/Formatter
+    use 'nvimtools/none-ls.nvim'
+    use 'nvimtools/none-ls-extras.nvim'
 
-  -- Commenter
-  use 'numToStr/Comment.nvim'
+    -- Commenter
+    use 'numToStr/Comment.nvim'
 
-  -- Autocomplete engine
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
+    -- Autocomplete engine
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
 
-  -- Snippet engine
-  use {
-    'L3MON4D3/LuaSnip',
-    requires = {
-        {'saadparwaiz1/cmp_luasnip'},
-        {'rafamadriz/friendly-snippets'},
-    },
-  }
+    -- Snippet engine
+    use {
+        'L3MON4D3/LuaSnip',
+        requires = {
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'rafamadriz/friendly-snippets' },
+        },
+    }
 
-  -- Greeter
-  use {
-    'goolord/alpha-nvim',
-    requires = { {'nvim-tree/nvim-web-devicons'} },
-  }
+    -- Autopair completion
+    use {
+        "windwp/nvim-autopairs",
+        after = "nvim-cmp",
+        requires = { "hrsh7th/nvim-cmp" },
+        config = function()
+            require("nvim-autopairs").setup({})
+
+            local cmp = require("cmp")
+            local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+            cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+        end
+    }
+
+
+    -- Greeter
+    use {
+        'goolord/alpha-nvim',
+        requires = { { 'nvim-tree/nvim-web-devicons' } },
+    }
 end)
