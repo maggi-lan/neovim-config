@@ -1,4 +1,4 @@
-# I use neovim btw
+# Neovim Configuration
 
 I'm writing this down so I don't forget all the keymaps, plugins, options, and random tweaks in my Neovim setup.
 
@@ -139,40 +139,3 @@ All managed through Mason. Auto-installed on first run:
 - **Borders**: Rounded borders on completion, docs, and Mason
 - **Colorscheme**: Gruvbox dark mode
 - **Statusline**: Hidden Vim mode display (lualine shows it)
-
-## Installation
-
-1. **Install Neovim** (>= 0.9.0)
-
-2. **Install Packer**:
-
-```bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-
-3. **Clone this config**:
-
-```bash
-git clone https://github.com/maggi-lan/neovim-config ~/.config/nvim
-```
-
-4. **Open Neovim and sync plugins**:
-
-```vim
-:PackerSync
-```
-
-5. **Restart Neovim** - Mason should auto-install LSPs
-
-6. **Install formatters manually** (if needed):
-
-```bash
-# Python
-pip install black isort
-
-# JavaScript/TypeScript
-npm install -g prettier
-
-# Others are handled by Mason
-```
