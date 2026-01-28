@@ -11,6 +11,7 @@ I'm writing this down so I don't forget all the keymaps, plugins, options, and r
 | Keymap      | Action                                     |
 | ----------- | ------------------------------------------ |
 | `<C-n>`     | Toggle nvim-tree                           |
+| `<leader>o` | Toggle oil (file explorer)                 |
 | `<leader>u` | Toggle undo-tree                           |
 | `<C-p>`     | Toggle markdown preview (opens in browser) |
 
@@ -72,7 +73,8 @@ I'm writing this down so I don't forget all the keymaps, plugins, options, and r
 
 - **packer.nvim** - Plugin manager (deprecated but still works)
 - **telescope.nvim** - Fuzzy finder
-- **nvim-tree.lua** - File explorer
+- **nvim-tree.lua** - File tree
+- **oil.nvim** - File explorer
 - **harpoon** - Quick file navigation
 - **undotree** - Visual undo history
 

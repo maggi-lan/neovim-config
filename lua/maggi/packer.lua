@@ -28,8 +28,11 @@ return require('packer').startup(function(use)
     -- Undo tree visualizer
     use 'mbbill/undotree'
 
-    -- File manager
+    -- File tree
     use 'nvim-tree/nvim-tree.lua'
+
+    -- File explorer
+    use 'stevearc/oil.nvim'
 
     -- Status line
     use 'nvim-lualine/lualine.nvim'
