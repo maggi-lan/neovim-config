@@ -35,6 +35,13 @@ vim.opt.smartcase = true
 -- Set terminal colors
 vim.opt.termguicolors = true
 
+-- Disable comment continuation
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+  end,
+})
+
 -- Other configurations
 vim.opt.scrolloff = 4
 vim.opt.signcolumn = "no"
