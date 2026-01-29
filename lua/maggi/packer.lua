@@ -32,7 +32,10 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-tree.lua'
 
     -- File explorer
-    use 'stevearc/oil.nvim'
+    use {
+        'stevearc/oil.nvim',
+        requires = { { 'nvim-tree/nvim-web-devicons' } },
+    }
 
     -- Status line
     use 'nvim-lualine/lualine.nvim'
@@ -81,6 +84,16 @@ return require('packer').startup(function(use)
             local cmp_autopairs = require("nvim-autopairs.completion.cmp")
             cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
         end
+    }
+
+    -- DAP (Debugger Adapter Protocol)
+    use {
+        'mfussenegger/nvim-dap',
+        requires = {
+            'rcarriga/nvim-dap-ui',
+            'nvim-neotest/nvim-nio',
+            'mfussenegger/nvim-dap-python',
+        },
     }
 
     -- Git diff viewer

@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Other configurations
 vim.opt.scrolloff = 4
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = ""

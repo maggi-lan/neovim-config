@@ -61,6 +61,13 @@ I'm writing this down so I don't forget all the keymaps, plugins, options, and r
 - `<C-e>` - Close completion menu
 - `<C-b>` / `<C-f>` - Scroll documentation up/down
 
+### Debugger
+
+| Keymap       | Action                |
+| ------------ | --------------------- |
+| `<leader>db` | Add/Remove breakpoint |
+| `<leader>dc` | Start debugger        |
+
 ### Few More Keymaps
 
 - `<C-d>` / `<C-u>` - Scroll half page down/up while cursor stays in the middle of the screen
@@ -98,6 +105,12 @@ I'm writing this down so I don't forget all the keymaps, plugins, options, and r
 
 - **none-ls.nvim** - Formatting and diagnostics
 - **none-ls-extras.nvim** - Extra sources (ESLint)
+
+### Debugging
+
+- **nvim-dap** - Debugger
+- **nvim-dap-ui** - User interface for debugger
+- **nvim-dap-python** - Python adapter
 
 ### Editor Enhancements
 
