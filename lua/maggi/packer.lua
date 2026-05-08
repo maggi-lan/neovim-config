@@ -86,6 +86,10 @@ return require('packer').startup(function(use)
         end
     }
 
+
+    -- GitHub copilot
+    use "github/copilot.vim"
+
     -- DAP (Debugger Adapter Protocol)
     use {
         'mfussenegger/nvim-dap',
@@ -100,10 +104,6 @@ return require('packer').startup(function(use)
     use "sindrets/diffview.nvim"
 
     -- Markdown preview
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-    })
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = {
             "markdown" } end, ft = { "markdown" }, })
 
